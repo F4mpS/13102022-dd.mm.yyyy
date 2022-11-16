@@ -48,4 +48,9 @@ foreach(int i in arr)
 */
 
 
+var x = '0'-'5';
+
+Console.WriteLine(x);
+Console.WriteLine(x.GetType());
+
 
