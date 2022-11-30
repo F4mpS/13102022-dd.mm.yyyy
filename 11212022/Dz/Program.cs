@@ -219,68 +219,27 @@ PrintArray3D(array3D);
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
+/*
+int[,] matrix = new int[4, 4];
 
-void FillMatrix(int[,] matrix)
+int temp = 1, i = 0, j = 0;
+
+while (temp <= matrix.GetLength(0) * matrix.GetLength(1))
 {
-    int temp = 0;
-    int start = 0;
-    int end = 0;
-    int rows = matrix.GetLength(0);
-    int columns = matrix.GetLength(1);
-
-
-    for (int i = 0; i < rows; i++, temp++)
-    {
-        matrix[0,i] = temp + 1;
-    }
-    PrintMatrix(matrix);
-
-
-    for (int i = 1; i < rows; i++, temp++)
-    {
-        matrix[i,rows - 1] = temp + 1;
-    }
-    PrintMatrix(matrix);
-
-
-    for (int i = rows - 1; i > 0; i--, temp++)
-    {
-        matrix[columns - 1,i - 1] = temp + 1;
-    }
-    PrintMatrix(matrix);
-
-
-    for (int i = rows - 2; i > 1; i--, temp++)
-    {
-        matrix[i,0] = temp + 1;
-    }
-    PrintMatrix(matrix);
-
-
-    for (int i = 1; i < columns - 1; i++, temp++)
-    {
-        matrix[1,i] = temp + 1;
-    }
-    PrintMatrix(matrix);
-
-
-    for (int i = 2; i < rows - 1; i++, temp++)
-    {
-        matrix[2,i] = temp + 1;
-    }
-    PrintMatrix(matrix);
-
-
-    for (int i = 1; i > 0; i--, temp++)
-    {
-        matrix[2,i] = temp + 1;
-    }
-    PrintMatrix(matrix);
+  matrix[i, j] = temp;
+  temp++;
+  if (i <= j + 1 && i + j < matrix.GetLength(1) - 1)
+    j++;
+  else if (i < j && i + j >= matrix.GetLength(0) - 1)
+    i++;
+  else if (i >= j && i + j > matrix.GetLength(1) - 1)
+    j--;
+  else
+    i--;
 }
 
-int[,] matrix = new int[4,4];
-FillMatrix(matrix);
 PrintMatrix(matrix);
+*/
 
 
 
@@ -320,7 +279,8 @@ PrintMatrix(matrix);
 
 
 
-/*
+
+
 void FillMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -331,14 +291,21 @@ void FillMatrix(int[,] matrix)
         }
     }
 }
-*/
+
 void PrintMatrix(int[,] inputMatrix)
 {
     for (int i = 0; i < inputMatrix.GetLength(0); i++)
     {
         for (int j = 0; j < inputMatrix.GetLength(1); j++)
         {
-           Console.Write(inputMatrix[i,j] + "\t");
+           if (inputMatrix[i,j] < 10)
+           {
+                Console.Write($" {inputMatrix[i,j]} ");
+           }
+           else 
+           {
+                Console.Write($"{inputMatrix[i,j]} ");
+           }
         }
         Console.WriteLine();
     }

@@ -220,8 +220,7 @@ PrintArray(СhangArray(array2));
 // Console.WriteLine(x);
 // x += new Random().NextDouble();
 // Console.WriteLine(x);
-
-
+/*
 int[] arr = new int[4]{1, 2, 3, 4};
 
 for(int i = 0; i < arr.GetLength(0); i++)
@@ -236,3 +235,4 @@ for(int i = 0; i < arr.GetLength(0); i++)
 }
 
 Console.WriteLine(string.Join(", ", arr));
+*/
